@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>kruzxz - Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Matrix Canvas Background -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- Scanlines Overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Boot Screen -->
+  <div id="boot-screen">
+    <div class="boot-content">
+      <div class="kali-dragon">
+        <pre class="ascii-dragon" id="ascii-art"></pre>
+      </div>
+      <div class="boot-log" id="boot-log"></div>
+      <div class="boot-progress">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p class="boot-skip">Press <span class="key">ENTER</span> or wait...</p>
+    </div>
+  </div>
+
+  <!-- Main Site -->
+  <div id="main-site" class="hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="nav-brand">
+        <span class="prompt">kruzxz@kali</span><span class="colon">:</span><span class="path">~</span><span class="hash">#</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link" data-cmd="./about.sh">about</a></li>
+        <li><a href="#skills" class="nav-link" data-cmd="./skills.sh">skills</a></li>
+        <li><a href="#services" class="nav-link" data-cmd="./services.sh">services</a></li>
+        <li><a href="#projects" class="nav-link" data-cmd="./projects.sh">projects</a></li>
+        <li><a href="#contact" class="nav-link" data-cmd="./contact.sh">contact</a></li>
+      </ul>
+      <div class="nav-status">
+        <span class="status-dot"></span>
+        <span class="status-text">ONLINE</span>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-container">
+        <div class="terminal-window">
+          <div class="terminal-titlebar">
+            <div class="terminal-buttons">
+              <span class="t-btn t-close"></span>
+              <span class="t-btn t-min"></span>
+              <span class="t-btn t-max"></span>
+            </div>
+            <span class="terminal-title">root@kali: ~</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-output" id="terminal-output"></div>
+            <div class="terminal-input-line">
+              <span class="prompt-full">root@kali:~# </span>
+              <span class="cursor-line" id="cursor-line"></span>
+              <span class="cursor blink">█</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-info">
+          <p class="hero-label">// IDENTITY</p>
+          <h1 class="hero-name" id="hero-name"></h1>
+          <p class="hero-roles">
+            <span class="role-tag active" data-role="Cyber Security Researcher">Cyber Security Researcher</span>
+            <span class="role-sep"> / </span>
+            <span class="role-tag" data-role="Computer Engineer">Computer Engineer</span>
+            <span class="role-sep"> / </span>
+            <span class="role-tag" data-role="Freelancer">Freelancer</span>
+          </p>
+          <p class="hero-tagline">Exploiting the web. Securing systems. Delivering results.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">ls ./projects</a>
+            <a href="#contact" class="btn btn-outline">nc -lvp contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>scroll down</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="section-header">
+        <span class="section-cmd">cat about.txt</span>
+        <span class="section-divider"></span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-avatar-wrapper">
+          <div class="avatar-terminal">
+            <div class="terminal-titlebar small">
+              <div class="terminal-buttons">
+                <span class="t-btn t-close"></span>
+                <span class="t-btn t-min"></span>
+                <span class="t-btn t-max"></span>
+              </div>
+              <span class="terminal-title">whoami</span>
+            </div>
+            <div class="avatar-box">
+              <div class="avatar-ascii">
+                <pre>
+  ╔══════════════╗
+  ║  ┌────────┐  ║
+  ║  │ ▓▓▓▓▓▓ │  ║
+  ║  │ ▓ ◉◉ ▓ │  ║
+  ║  │ ▓  ▲  ▓ │  ║
+  ║  │ ▓ ─── ▓ │  ║
+  ║  └────────┘  ║
+  ║   [HACKER]   ║
+  ╚══════════════╝
+                </pre>
+              </div>
+              <div class="avatar-stats">
+                <div class="stat-row"><span class="stat-key">UID:</span><span class="stat-val">0 (root)</span></div>
+                <div class="stat-row"><span class="stat-key">GID:</span><span class="stat-val">0 (root)</span></div>
+                <div class="stat-row"><span class="stat-key">Shell:</span><span class="stat-val">/bin/zsh</span></div>
+                <div class="stat-row"><span class="stat-key">OS:</span><span class="stat-val">Kali Linux</span></div>
+                <div class="stat-row"><span class="stat-key">Mode:</span><span class="stat-val" id="uptime-val">Freelance</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p class="highlight-line"><span class="comment">// Hello World 👋</span></p>
+            <p>I'm a <strong class="accent-green">Full-Stack Web Developer</strong> and <strong class="accent-blue">Cybersecurity Specialist</strong> operating as a freelancer. I build fast, secure, and scalable web applications while also hunting vulnerabilities and hardening digital infrastructures.</p>
+            <p>With deep knowledge in <strong class="accent-cyan">offensive security</strong>, penetration testing, and modern web frameworks, I bridge the gap between development and security — delivering solutions that are both functional and fortified.</p>
+            <p>Every project I take is treated like a mission. Recon. Plan. Execute. Deliver.</p>
+          </div>
+          <div class="about-badges">
+            <div class="badge"><span class="badge-icon">🎯</span>Penetration Testing</div>
+            <div class="badge"><span class="badge-icon">🔐</span>OSCP Oriented</div>
+            <div class="badge"><span class="badge-icon">⚡</span>Full Stack Dev</div>
+            <div class="badge"><span class="badge-icon">🕵️</span>Bug Bounty</div>
+            <div class="badge"><span class="badge-icon">🐉</span>Kali Linux</div>
+            <div class="badge"><span class="badge-icon">🌐</span>Open Source</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="section-header">
+        <span class="section-cmd">nmap --skills localhost</span>
+        <span class="section-divider"></span>
+        <h2 class="section-title">Skills & Arsenal</h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="cat-icon">💻</span>
+            <h3>Web Development</h3>
+            <span class="cat-tag">DEV</span>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-label"><span>HTML / CSS</span><span class="skill-percent">95%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>JavaScript</span><span class="skill-percent">90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>React / Next.js</span><span class="skill-percent">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>Node.js / Express</span><span class="skill-percent">82%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>Python / Django</span><span class="skill-percent">78%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>MongoDB / MySQL</span><span class="skill-percent">80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="cat-icon">🔐</span>
+            <h3>Cybersecurity</h3>
+            <span class="cat-tag sec">SEC</span>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-label"><span>Penetration Testing</span><span class="skill-percent">90%</span></div>
+              <div class="skill-bar"><div class="skill-fill sec" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>Network Security</span><span class="skill-percent">88%</span></div>
+              <div class="skill-bar"><div class="skill-fill sec" data-width="88"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>Web App Security</span><span class="skill-percent">92%</span></div>
+              <div class="skill-bar"><div class="skill-fill sec" data-width="92"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>Metasploit / Burp</span><span class="skill-percent">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill sec" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>CTF / Bug Bounty</span><span class="skill-percent">87%</span></div>
+              <div class="skill-bar"><div class="skill-fill sec" data-width="87"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>OSINT / Recon</span><span class="skill-percent">89%</span></div>
+              <div class="skill-bar"><div class="skill-fill sec" data-width="89"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category tools-category">
+          <div class="skill-cat-header">
+            <span class="cat-icon">⚙️</span>
+            <h3>Tools & Environment</h3>
+            <span class="cat-tag tools">TOOLS</span>
+          </div>
+          <div class="tools-grid">
+            <div class="tool-badge">Kali Linux</div>
+            <div class="tool-badge">Nmap</div>
+            <div class="tool-badge">Wireshark</div>
+            <div class="tool-badge">Burp Suite</div>
+            <div class="tool-badge">Metasploit</div>
+            <div class="tool-badge">Hydra</div>
+            <div class="tool-badge">Git / GitHub</div>
+            <div class="tool-badge">Docker</div>
+            <div class="tool-badge">Nginx</div>
+            <div class="tool-badge">AWS / VPS</div>
+            <div class="tool-badge">SQLMap</div>
+            <div class="tool-badge">Aircrack-ng</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="section-header">
+        <span class="section-cmd">systemctl list-services</span>
+        <span class="section-divider"></span>
+        <h2 class="section-title">Services</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-index="01">
+          <div class="service-icon">🌐</div>
+          <h3 class="service-title">Web Development</h3>
+          <p class="service-desc">Full-stack web applications built with modern frameworks. Responsive, performant, and SEO-optimized.</p>
+          <ul class="service-list">
+            <li>Custom Website Design</li>
+            <li>React / Next.js Apps</li>
+            <li>REST API Development</li>
+            <li>Database Architecture</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-status active">● ACTIVE</span>
+          </div>
+        </div>
+        <div class="service-card featured" data-index="02">
+          <div class="service-badge">POPULAR</div>
+          <div class="service-icon">🔍</div>
+          <h3 class="service-title">Penetration Testing</h3>
+          <p class="service-desc">Full-scope offensive security assessments. Web apps, networks, and social engineering simulations.</p>
+          <ul class="service-list">
+            <li>Web App Pen Testing</li>
+            <li>Network Vulnerability Scan</li>
+            <li>OWASP Top 10 Audit</li>
+            <li>Detailed Security Reports</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-status active">● ACTIVE</span>
+          </div>
+        </div>
+        <div class="service-card" data-index="03">
+          <div class="service-icon">🛡️</div>
+          <h3 class="service-title">Security Hardening</h3>
+          <p class="service-desc">Fortify your existing systems against threats. Server config, firewall rules, and secure coding reviews.</p>
+          <ul class="service-list">
+            <li>Server Hardening</li>
+            <li>SSL/TLS Configuration</li>
+            <li>Code Security Review</li>
+            <li>Incident Response</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-status active">● ACTIVE</span>
+          </div>
+        </div>
+        <div class="service-card" data-index="04">
+          <div class="service-icon">🐛</div>
+          <h3 class="service-title">Bug Bounty Consulting</h3>
+          <p class="service-desc">Help your team set up and manage bug bounty programs. Also available for responsible disclosure reports.</p>
+          <ul class="service-list">
+            <li>Program Setup</li>
+            <li>Scope Definition</li>
+            <li>Triage & Validation</li>
+            <li>CVE Documentation</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-status active">● ACTIVE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <span class="section-cmd">ls -la ./projects/</span>
+        <span class="section-divider"></span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-type dev">DEV</span>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub">{ }</a>
+              <a href="#" class="proj-link" title="Live">↗</a>
+            </div>
+          </div>
+          <h3 class="project-title">SecureDash</h3>
+          <p class="project-desc">A real-time cybersecurity dashboard built with React & Node.js. Monitors network events, logs, and threat feeds via WebSockets.</p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">WebSocket</span>
+            <span class="tag">MongoDB</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-type sec">SEC</span>
+            <div class="project-links">
+              <a href="#" class="proj-link">{ }</a>
+              <a href="#" class="proj-link">↗</a>
+            </div>
+          </div>
+          <h3 class="project-title">AutoRecon++</h3>
+          <p class="project-desc">Python-based automated recon tool for bug bounty hunters. Chains Nmap, Subfinder, and Nuclei into a single workflow.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Nmap</span>
+            <span class="tag">Nuclei</span>
+            <span class="tag">Bash</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-type dev">DEV</span>
+            <div class="project-links">
+              <a href="#" class="proj-link">{ }</a>
+              <a href="#" class="proj-link">↗</a>
+            </div>
+          </div>
+          <h3 class="project-title">PhishGuard</h3>
+          <p class="project-desc">ML-powered phishing URL detector. Trained on 100K+ URLs. Deployed as a Chrome extension and REST API service.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">ML</span>
+            <span class="tag">Chrome Ext</span>
+            <span class="tag">Flask</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-type sec">SEC</span>
+            <div class="project-links">
+              <a href="#" class="proj-link">{ }</a>
+              <a href="#" class="proj-link">↗</a>
+            </div>
+          </div>
+          <h3 class="project-title">SQLi Hunter</h3>
+          <p class="project-desc">Automated SQL injection scanner with bypass techniques. Detects blind, time-based, and error-based SQLi vulnerabilities.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQLMap</span>
+            <span class="tag">Automation</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-type dev">DEV</span>
+            <div class="project-links">
+              <a href="#" class="proj-link">{ }</a>
+              <a href="#" class="proj-link">↗</a>
+            </div>
+          </div>
+          <h3 class="project-title">HackFolio</h3>
+          <p class="project-desc">Open-source Kali-themed developer portfolio template. 100+ GitHub stars. Fully customizable with zero dependencies.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JS</span>
+            <span class="tag">Open Source</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-type sec">SEC</span>
+            <div class="project-links">
+              <a href="#" class="proj-link">{ }</a>
+              <a href="#" class="proj-link">↗</a>
+            </div>
+          </div>
+          <h3 class="project-title">WiFi Analyzer CLI</h3>
+          <p class="project-desc">Bash + Python tool for wireless network analysis. Detects rogue APs, deauth attacks, and WPS vulnerabilities.</p>
+          <div class="project-tags">
+            <span class="tag">Bash</span>
+            <span class="tag">Python</span>
+            <span class="tag">Aircrack-ng</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="section-header">
+        <span class="section-cmd">nc -lvp 4444 # contact</span>
+        <span class="section-divider"></span>
+        <h2 class="section-title">Contact</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-terminal">
+            <div class="terminal-titlebar small">
+              <div class="terminal-buttons">
+                <span class="t-btn t-close"></span>
+                <span class="t-btn t-min"></span>
+                <span class="t-btn t-max"></span>
+              </div>
+              <span class="terminal-title">contact.txt</span>
+            </div>
+            <div class="contact-terminal-body">
+              <div class="contact-line">
+                <span class="ct-key">$ email</span>
+                <span class="ct-val">root@yourdomain.com</span>
+              </div>
+              <div class="contact-line">
+                <span class="ct-key">$ github</span>
+                <span class="ct-val">github.com/yourusername</span>
+              </div>
+              <div class="contact-line">
+                <span class="ct-key">$ linkedin</span>
+                <span class="ct-val">linkedin.com/in/yourusername</span>
+              </div>
+              <div class="contact-line">
+                <span class="ct-key">$ discord</span>
+                <span class="ct-val">hacker#0000</span>
+              </div>
+              <div class="contact-line">
+                <span class="ct-key">$ location</span>
+                <span class="ct-val">Remote Worldwide 🌍</span>
+              </div>
+              <div class="contact-line blink-line">
+                <span class="ct-key">$ status</span>
+                <span class="ct-val available">● Available for hire</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="name">// Your Name</label>
+              <input type="text" id="name" placeholder="Enter your name..." required autocomplete="off"/>
+            </div>
+            <div class="form-group">
+              <label for="email">// Email Address</label>
+              <input type="email" id="email" placeholder="Enter your email..." required autocomplete="off"/>
+            </div>
+            <div class="form-group">
+              <label for="subject">// Subject</label>
+              <select id="subject">
+                <option value="">Select a service...</option>
+                <option value="web">Web Development</option>
+                <option value="pentest">Penetration Testing</option>
+                <option value="hardening">Security Hardening</option>
+                <option value="bugbounty">Bug Bounty Consulting</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">// Message</label>
+              <textarea id="message" rows="5" placeholder="Describe your mission..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width">
+              <span class="btn-text">./send_message.sh</span>
+              <span class="btn-loader hidden" id="btn-loader">Sending...</span>
+            </button>
+            <div class="form-success hidden" id="form-success">
+              <span class="success-icon">✓</span> Message transmitted successfully!
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="prompt">root@kali</span><span class="colon">:</span><span class="path">~</span><span class="hash">#</span>
+          <span class="footer-copy">  © 2025 All Rights Reserved</span>
+        </div>
+        <div class="footer-links">
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">HackTheBox</a>
+          <a href="#">TryHackMe</a>
+        </div>
+        <div class="footer-cmd">
+          <span class="footer-terminal">System uptime: <span id="footer-uptime">calculating...</span></span>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /main-site -->
+
+  <script src="script.js"></script>
+</body>
+</html>
