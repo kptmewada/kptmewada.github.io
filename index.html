@@ -2,548 +2,477 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>kruzxz - Personal Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Krunal P. Mewada — Cybersecurity Engineer & Web Developer based in Ahmedabad, Gujarat, India." />
+  <title>Krunal P. Mewada | CyberSecurity & Web Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Matrix Canvas Background -->
-  <canvas id="matrix-canvas"></canvas>
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">KPM<span class="accent">.</span></a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="mailto:kptmewada@gmail.com" class="nav__cta">Hire Me →</a>
+      <button class="nav__burger" id="navBurger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <ul>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#certifications" class="mobile-link">Certs</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <!-- Scanlines Overlay -->
-  <div class="scanlines"></div>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero__grid-bg"></div>
+    <div class="hero__noise"></div>
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="blink-dot"></span>
+        Available for opportunities
+      </div>
+      <h1 class="hero__name">
+        <span class="reveal-line">KRUNAL</span>
+        <span class="reveal-line delay-1">P. MEWADA</span>
+      </h1>
+      <div class="hero__roles">
+        <span class="role-tag">CyberSecurity Engineer</span>
+        <span class="role-sep">/</span>
+        <span class="role-tag">Web Developer</span>
+        <span class="role-sep">/</span>
+        <span class="role-tag">Blue Team</span>
+      </div>
+      <p class="hero__sub">
+        Ahmedabad, Gujarat, India<br />
+        Securing the digital world. Building experiences that last.
+      </p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary">Get in Touch</a>
+        <a href="#experience" class="btn btn--ghost">View Work ↓</a>
+      </div>
+    </div>
+    <div class="hero__stats">
+      <div class="stat">
+        <span class="stat__num" data-target="150">0</span><span class="stat__sym">+</span>
+        <p>Projects Delivered</p>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-target="2">0</span><span class="stat__sym">+</span>
+        <p>Years in Web Dev</p>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-target="7">0</span><span class="stat__sym"></span>
+        <p>Certifications</p>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">scroll ↓</div>
+  </section>
 
-  <!-- Boot Screen -->
-  <div id="boot-screen">
-    <div class="boot-content">
-      <div class="kali-dragon">
-        <pre class="ascii-dragon" id="ascii-art"></pre>
-      </div>
-      <div class="boot-log" id="boot-log"></div>
-      <div class="boot-progress">
-        <div class="progress-bar" id="progress-bar"></div>
-      </div>
-      <p class="boot-skip">Press <span class="key">ENTER</span> or wait...</p>
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Blue Team</span><span class="sep">◆</span>
+      <span>Threat Detection</span><span class="sep">◆</span>
+      <span>Incident Response</span><span class="sep">◆</span>
+      <span>Digital Forensics</span><span class="sep">◆</span>
+      <span>DevSecOps</span><span class="sep">◆</span>
+      <span>Web Development</span><span class="sep">◆</span>
+      <span>Network Security</span><span class="sep">◆</span>
+      <span>SOC Analyst</span><span class="sep">◆</span>
+      <span>Cyber Awareness</span><span class="sep">◆</span>
+      <!-- duplicate -->
+      <span>Blue Team</span><span class="sep">◆</span>
+      <span>Threat Detection</span><span class="sep">◆</span>
+      <span>Incident Response</span><span class="sep">◆</span>
+      <span>Digital Forensics</span><span class="sep">◆</span>
+      <span>DevSecOps</span><span class="sep">◆</span>
+      <span>Web Development</span><span class="sep">◆</span>
+      <span>Network Security</span><span class="sep">◆</span>
+      <span>SOC Analyst</span><span class="sep">◆</span>
+      <span>Cyber Awareness</span><span class="sep">◆</span>
     </div>
   </div>
 
-  <!-- Main Site -->
-  <div id="main-site" class="hidden">
-
-    <!-- Navigation -->
-    <nav id="navbar">
-      <div class="nav-brand">
-        <span class="prompt">kruzxz@kali</span><span class="colon">:</span><span class="path">~</span><span class="hash">#</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-link" data-cmd="./about.sh">about</a></li>
-        <li><a href="#skills" class="nav-link" data-cmd="./skills.sh">skills</a></li>
-        <li><a href="#services" class="nav-link" data-cmd="./services.sh">services</a></li>
-        <li><a href="#projects" class="nav-link" data-cmd="./projects.sh">projects</a></li>
-        <li><a href="#contact" class="nav-link" data-cmd="./contact.sh">contact</a></li>
-      </ul>
-      <div class="nav-status">
-        <span class="status-dot"></span>
-        <span class="status-text">ONLINE</span>
-      </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero">
-      <div class="hero-container">
-        <div class="terminal-window">
-          <div class="terminal-titlebar">
-            <div class="terminal-buttons">
-              <span class="t-btn t-close"></span>
-              <span class="t-btn t-min"></span>
-              <span class="t-btn t-max"></span>
-            </div>
-            <span class="terminal-title">root@kali: ~</span>
-          </div>
-          <div class="terminal-body">
-            <div class="terminal-output" id="terminal-output"></div>
-            <div class="terminal-input-line">
-              <span class="prompt-full">root@kali:~# </span>
-              <span class="cursor-line" id="cursor-line"></span>
-              <span class="cursor blink">█</span>
-            </div>
-          </div>
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__layout">
+        <div class="about__left">
+          <p class="section-label">// about me</p>
+          <h2 class="section-title">Securing Systems.<br />Crafting Experiences.</h2>
         </div>
-        <div class="hero-info">
-          <p class="hero-label">// IDENTITY</p>
-          <h1 class="hero-name" id="hero-name"></h1>
-          <p class="hero-roles">
-            <span class="role-tag active" data-role="Cyber Security Researcher">Cyber Security Researcher</span>
-            <span class="role-sep"> / </span>
-            <span class="role-tag" data-role="Computer Engineer">Computer Engineer</span>
-            <span class="role-sep"> / </span>
-            <span class="role-tag" data-role="Freelancer">Freelancer</span>
+        <div class="about__right">
+          <p class="about__text">
+            I'm a final-year B.E. Computer Engineering student pursuing a Post-Graduate Diploma in <strong>Cyber Security & Digital Forensics</strong> at Rashtriya Raksha University. Alongside my cybersecurity studies, I bring <strong>2+ years of professional web development experience</strong>, having risen from intern to Senior Web Developer & Team Lead.
           </p>
-          <p class="hero-tagline">Exploiting the web. Securing systems. Delivering results.</p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">ls ./projects</a>
-            <a href="#contact" class="btn btn-outline">nc -lvp contact</a>
+          <p class="about__text">
+            My dual expertise in <strong>defensive security</strong> and <strong>full-stack web development</strong> lets me bridge the gap between building digital products and protecting them. I'm passionate about Blue Team operations, threat detection, and crafting web experiences that perform and convert.
+          </p>
+          <div class="about__pills">
+            <span>🛡️ Blue Team</span>
+            <span>🔍 Digital Forensics</span>
+            <span>💻 Web Dev</span>
+            <span>⚙️ DevSecOps</span>
+            <span>📊 Incident Response</span>
+          </div>
+          <div class="about__contact-row">
+            <a href="tel:+919712907122" class="contact-chip">📞 +91-9712907122</a>
+            <a href="mailto:kptmewada@gmail.com" class="contact-chip">✉ kptmewada@gmail.com</a>
           </div>
         </div>
       </div>
-      <div class="scroll-indicator">
-        <span>scroll down</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about">
-      <div class="section-header">
-        <span class="section-cmd">cat about.txt</span>
-        <span class="section-divider"></span>
-        <h2 class="section-title">About Me</h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-avatar-wrapper">
-          <div class="avatar-terminal">
-            <div class="terminal-titlebar small">
-              <div class="terminal-buttons">
-                <span class="t-btn t-close"></span>
-                <span class="t-btn t-min"></span>
-                <span class="t-btn t-max"></span>
-              </div>
-              <span class="terminal-title">whoami</span>
-            </div>
-            <div class="avatar-box">
-              <div class="avatar-ascii">
-                <pre>
-  ╔══════════════╗
-  ║  ┌────────┐  ║
-  ║  │ ▓▓▓▓▓▓ │  ║
-  ║  │ ▓ ◉◉ ▓ │  ║
-  ║  │ ▓  ▲  ▓ │  ║
-  ║  │ ▓ ─── ▓ │  ║
-  ║  └────────┘  ║
-  ║   [HACKER]   ║
-  ╚══════════════╝
-                </pre>
-              </div>
-              <div class="avatar-stats">
-                <div class="stat-row"><span class="stat-key">UID:</span><span class="stat-val">0 (root)</span></div>
-                <div class="stat-row"><span class="stat-key">GID:</span><span class="stat-val">0 (root)</span></div>
-                <div class="stat-row"><span class="stat-key">Shell:</span><span class="stat-val">/bin/zsh</span></div>
-                <div class="stat-row"><span class="stat-key">OS:</span><span class="stat-val">Kali Linux</span></div>
-                <div class="stat-row"><span class="stat-key">Mode:</span><span class="stat-val" id="uptime-val">Freelance</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="about-content">
-          <div class="about-text">
-            <p class="highlight-line"><span class="comment">// Hello World 👋</span></p>
-            <p>I'm a <strong class="accent-green">Full-Stack Web Developer</strong> and <strong class="accent-blue">Cybersecurity Specialist</strong> operating as a freelancer. I build fast, secure, and scalable web applications while also hunting vulnerabilities and hardening digital infrastructures.</p>
-            <p>With deep knowledge in <strong class="accent-cyan">offensive security</strong>, penetration testing, and modern web frameworks, I bridge the gap between development and security — delivering solutions that are both functional and fortified.</p>
-            <p>Every project I take is treated like a mission. Recon. Plan. Execute. Deliver.</p>
-          </div>
-          <div class="about-badges">
-            <div class="badge"><span class="badge-icon">🎯</span>Penetration Testing</div>
-            <div class="badge"><span class="badge-icon">🔐</span>OSCP Oriented</div>
-            <div class="badge"><span class="badge-icon">⚡</span>Full Stack Dev</div>
-            <div class="badge"><span class="badge-icon">🕵️</span>Bug Bounty</div>
-            <div class="badge"><span class="badge-icon">🐉</span>Kali Linux</div>
-            <div class="badge"><span class="badge-icon">🌐</span>Open Source</div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="experience section section--dark" id="experience">
+    <div class="container">
+      <p class="section-label">// work experience</p>
+      <h2 class="section-title">Where I've<br />Made Impact.</h2>
+      <div class="timeline">
 
-    <!-- Skills Section -->
-    <section id="skills">
-      <div class="section-header">
-        <span class="section-cmd">nmap --skills localhost</span>
-        <span class="section-divider"></span>
-        <h2 class="section-title">Skills & Arsenal</h2>
-      </div>
-      <div class="skills-grid">
-
-        <div class="skill-category">
-          <div class="skill-cat-header">
-            <span class="cat-icon">💻</span>
-            <h3>Web Development</h3>
-            <span class="cat-tag">DEV</span>
+        <div class="timeline__item reveal">
+          <div class="timeline__meta">
+            <span class="timeline__date">Jan 2024 – Jul 2025</span>
+            <span class="timeline__tag">Senior Role</span>
           </div>
-          <div class="skill-items">
-            <div class="skill-item">
-              <div class="skill-label"><span>HTML / CSS</span><span class="skill-percent">95%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-label"><span>JavaScript</span><span class="skill-percent">90%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-label"><span>React / Next.js</span><span class="skill-percent">85%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-label"><span>Node.js / Express</span><span class="skill-percent">82%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-label"><span>Python / Django</span><span class="skill-percent">78%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-label"><span>MongoDB / MySQL</span><span class="skill-percent">80%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
-            </div>
+          <div class="timeline__card">
+            <h3>Senior Web Developer & Team Lead</h3>
+            <h4>Perfect Designing Solutions, Ahmedabad</h4>
+            <ul>
+              <li>Progressed from FTE to Team Lead through consistent performance and leadership.</li>
+              <li>Managed end-to-end project lifecycles: planning, execution, monitoring & delivery.</li>
+              <li>Expertise in Project Management, IT Operations, E-commerce & SEO.</li>
+              <li>Supported team growth through knowledge sharing and onboarding of new members.</li>
+            </ul>
           </div>
         </div>
 
-        <div class="skill-category">
-          <div class="skill-cat-header">
-            <span class="cat-icon">🔐</span>
-            <h3>Cybersecurity</h3>
-            <span class="cat-tag sec">SEC</span>
+        <div class="timeline__item reveal">
+          <div class="timeline__meta">
+            <span class="timeline__date">Apr 2023 – Jan 2024</span>
+            <span class="timeline__tag">Full Time</span>
           </div>
-          <div class="skill-items">
-            <div class="skill-item">
-              <div class="skill-label"><span>Penetration Testing</span><span class="skill-percent">90%</span></div>
-              <div class="skill-bar"><div class="skill-fill sec" data-width="90"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-label"><span>Network Security</span><span class="skill-percent">88%</span></div>
-              <div class="skill-bar"><div class="skill-fill sec" data-width="88"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-label"><span>Web App Security</span><span class="skill-percent">92%</span></div>
-              <div class="skill-bar"><div class="skill-fill sec" data-width="92"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-label"><span>Metasploit / Burp</span><span class="skill-percent">85%</span></div>
-              <div class="skill-bar"><div class="skill-fill sec" data-width="85"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-label"><span>CTF / Bug Bounty</span><span class="skill-percent">87%</span></div>
-              <div class="skill-bar"><div class="skill-fill sec" data-width="87"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-label"><span>OSINT / Recon</span><span class="skill-percent">89%</span></div>
-              <div class="skill-bar"><div class="skill-fill sec" data-width="89"></div></div>
-            </div>
+          <div class="timeline__card">
+            <h3>Web Developer</h3>
+            <h4>Perfect Designing Solutions, Ahmedabad</h4>
+            <ul>
+              <li>Promoted from Intern based on consistent performance and technical skills.</li>
+              <li>Delivered 150+ projects with high design quality and user engagement.</li>
+              <li>Translated business requirements into effective technical solutions.</li>
+            </ul>
           </div>
         </div>
 
-        <div class="skill-category tools-category">
-          <div class="skill-cat-header">
-            <span class="cat-icon">⚙️</span>
-            <h3>Tools & Environment</h3>
-            <span class="cat-tag tools">TOOLS</span>
+        <div class="timeline__item reveal">
+          <div class="timeline__meta">
+            <span class="timeline__date">Jan 2023 – Apr 2023</span>
+            <span class="timeline__tag">Internship</span>
           </div>
-          <div class="tools-grid">
-            <div class="tool-badge">Kali Linux</div>
-            <div class="tool-badge">Nmap</div>
-            <div class="tool-badge">Wireshark</div>
-            <div class="tool-badge">Burp Suite</div>
-            <div class="tool-badge">Metasploit</div>
-            <div class="tool-badge">Hydra</div>
-            <div class="tool-badge">Git / GitHub</div>
-            <div class="tool-badge">Docker</div>
-            <div class="tool-badge">Nginx</div>
-            <div class="tool-badge">AWS / VPS</div>
-            <div class="tool-badge">SQLMap</div>
-            <div class="tool-badge">Aircrack-ng</div>
+          <div class="timeline__card">
+            <h3>Web Developer Intern</h3>
+            <h4>Perfect Designing Solutions, Ahmedabad</h4>
+            <ul>
+              <li>Gained hands-on experience with real-world projects and professional workflows.</li>
+              <li>Assisted in development, testing & documentation across multiple projects.</li>
+              <li>Followed coding standards and organizational processes.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal">
+          <div class="timeline__meta">
+            <span class="timeline__date">Dec 2019 – Jul 2020</span>
+            <span class="timeline__tag">Part Time</span>
+          </div>
+          <div class="timeline__card">
+            <h3>Research Executive</h3>
+            <h4>Global Network Institute & Vibrant Market, Ahmedabad</h4>
+            <ul>
+              <li>Promoted programs for high-profile clients: World Bank, Government of Gujarat.</li>
+              <li>Prepared market research reports on international market trends.</li>
+              <li>Contributed to U.S. Commercial Services water & wastewater sector delegations.</li>
+            </ul>
           </div>
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section id="services">
-      <div class="section-header">
-        <span class="section-cmd">systemctl list-services</span>
-        <span class="section-divider"></span>
-        <h2 class="section-title">Services</h2>
+  <!-- ===== SKILLS ===== -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <p class="section-label">// skills & tools</p>
+      <h2 class="section-title">My Arsenal.</h2>
+      <div class="skills__grid">
+
+        <div class="skill-card reveal">
+          <div class="skill-card__icon">🛡️</div>
+          <h3>CyberSecurity Tools</h3>
+          <div class="skill-tags">
+            <span>Nmap</span><span>Wireshark</span><span>Metasploit</span>
+            <span>Burp Suite</span><span>Volatility</span><span>AutoPsy</span>
+            <span>FTK Imager</span><span>Network Miner</span><span>ELK Stack</span>
+            <span>VirusTotal</span><span>FlarVM</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__icon">💻</div>
+          <h3>Web Development</h3>
+          <div class="skill-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span>
+            <span>WordPress</span><span>WooCommerce</span><span>Shopify</span>
+            <span>Elementor Pro</span><span>Divi</span><span>Webflow</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__icon">🌐</div>
+          <h3>SEO & Analytics</h3>
+          <div class="skill-tags">
+            <span>Yoast SEO</span><span>Rank Math</span><span>Google Analytics</span>
+            <span>Search Console</span><span>Google Site Kit</span><span>All in One SEO</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__icon">☁️</div>
+          <h3>Hosting & Infrastructure</h3>
+          <div class="skill-tags">
+            <span>GoDaddy</span><span>Hostinger</span><span>cPanel</span>
+            <span>Cloudflare</span><span>WHM</span><span>MySQL</span>
+            <span>phpMyAdmin</span><span>Google Cloud</span><span>FTP</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__icon">🔧</div>
+          <h3>Integrations & CRM</h3>
+          <div class="skill-tags">
+            <span>Zoho</span><span>HubSpot</span><span>REST APIs</span>
+            <span>Wordfence</span><span>UpdraftPlus</span><span>Duplicator</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__icon">📋</div>
+          <h3>Project Management</h3>
+          <div class="skill-tags">
+            <span>Slack</span><span>Asana</span><span>Microsoft Teams</span>
+            <span>GitHub</span><span>Figma</span><span>Miro</span>
+          </div>
+        </div>
+
       </div>
-      <div class="services-grid">
-        <div class="service-card" data-index="01">
-          <div class="service-icon">🌐</div>
-          <h3 class="service-title">Web Development</h3>
-          <p class="service-desc">Full-stack web applications built with modern frameworks. Responsive, performant, and SEO-optimized.</p>
-          <ul class="service-list">
-            <li>Custom Website Design</li>
-            <li>React / Next.js Apps</li>
-            <li>REST API Development</li>
-            <li>Database Architecture</li>
+
+      <div class="os-strip">
+        <span class="os-label">Environments:</span>
+        <span class="os-item">🪟 Windows</span>
+        <span class="os-item">🐉 Kali Linux</span>
+        <span class="os-item">🐧 Ubuntu</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section class="certs section section--dark" id="certifications">
+    <div class="container">
+      <p class="section-label">// certifications</p>
+      <h2 class="section-title">Earned.<br />Not Bought.</h2>
+      <div class="certs__grid">
+        <div class="cert-card reveal">
+          <span class="cert-icon">🏅</span>
+          <h3>Certified Cyber Security Professional</h3>
+          <p>I.C.T.R.D.</p>
+        </div>
+        <div class="cert-card reveal">
+          <span class="cert-icon">🔐</span>
+          <h3>Certified Network Security Practitioner (CNSP)</h3>
+          <p>SecOps Group</p>
+        </div>
+        <div class="cert-card reveal">
+          <span class="cert-icon">🖥️</span>
+          <h3>SOC Level 1</h3>
+          <p>TryHackMe</p>
+        </div>
+        <div class="cert-card reveal">
+          <span class="cert-icon">🔎</span>
+          <h3>Windows Forensic Analysis Bootcamp</h3>
+          <p>CDAC India</p>
+        </div>
+        <div class="cert-card reveal">
+          <span class="cert-icon">🎣</span>
+          <h3>Certified Phishing Prevention Specialist (CPPS)</h3>
+          <p>Hack & Fix</p>
+        </div>
+        <div class="cert-card reveal">
+          <span class="cert-icon">🌐</span>
+          <h3>Responsive Web Design</h3>
+          <p>FreeCodeCamp</p>
+        </div>
+        <div class="cert-card reveal">
+          <span class="cert-icon">☁️</span>
+          <h3>Google Cloud Essentials</h3>
+          <p>Google Qwiklabs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="education section" id="education">
+    <div class="container">
+      <p class="section-label">// education</p>
+      <h2 class="section-title">Academic<br />Foundation.</h2>
+      <div class="edu__grid">
+        <div class="edu-card reveal">
+          <div class="edu-card__year">2026 <span>(Pursuing)</span></div>
+          <h3>PG Diploma in Cyber Security & Digital Forensics</h3>
+          <p>Rashtriya Raksha University, Gandhinagar</p>
+        </div>
+        <div class="edu-card reveal">
+          <div class="edu-card__year">2025</div>
+          <h3>B.E. in Computer Engineering <span class="cgpa">CGPA: 8.3</span></h3>
+          <p>Gokul Global University, Siddhpur</p>
+        </div>
+        <div class="edu-card reveal">
+          <div class="edu-card__year">2021</div>
+          <h3>Diploma in Computer Engineering <span class="cgpa">CGPA: 7.6</span></h3>
+          <p>Gujarat Technological University, Ahmedabad</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEADERSHIP ===== -->
+  <section class="leadership section section--dark" id="leadership">
+    <div class="container">
+      <p class="section-label">// leadership & volunteering</p>
+      <h2 class="section-title">Beyond the<br />Classroom.</h2>
+      <div class="lead__grid">
+        <div class="lead-card reveal">
+          <div class="lead-card__head">
+            <span class="lead-icon">🔰</span>
+            <div>
+              <h3>Cyber Volunteer</h3>
+              <p class="lead-org">Rashtriya Raksha University</p>
+              <p class="lead-date">Jan 2026 – Present</p>
+            </div>
+          </div>
+          <ul>
+            <li>Conducting awareness sessions on phishing, internet use & password safety.</li>
+            <li>Designing digital content and visuals for events and social media.</li>
+            <li>Assisting faculty in organizing & managing cyber awareness events.</li>
           </ul>
-          <div class="service-footer">
-            <span class="service-status active">● ACTIVE</span>
-          </div>
         </div>
-        <div class="service-card featured" data-index="02">
-          <div class="service-badge">POPULAR</div>
-          <div class="service-icon">🔍</div>
-          <h3 class="service-title">Penetration Testing</h3>
-          <p class="service-desc">Full-scope offensive security assessments. Web apps, networks, and social engineering simulations.</p>
-          <ul class="service-list">
-            <li>Web App Pen Testing</li>
-            <li>Network Vulnerability Scan</li>
-            <li>OWASP Top 10 Audit</li>
-            <li>Detailed Security Reports</li>
-          </ul>
-          <div class="service-footer">
-            <span class="service-status active">● ACTIVE</span>
+        <div class="lead-card reveal">
+          <div class="lead-card__head">
+            <span class="lead-icon">⚡</span>
+            <div>
+              <h3>Volunteer — Smart India Hackathon</h3>
+              <p class="lead-org">CodeArena 2.0, RRU Gandhinagar</p>
+              <p class="lead-date">Mar 2019 – May 2019</p>
+            </div>
           </div>
-        </div>
-        <div class="service-card" data-index="03">
-          <div class="service-icon">🛡️</div>
-          <h3 class="service-title">Security Hardening</h3>
-          <p class="service-desc">Fortify your existing systems against threats. Server config, firewall rules, and secure coding reviews.</p>
-          <ul class="service-list">
-            <li>Server Hardening</li>
-            <li>SSL/TLS Configuration</li>
-            <li>Code Security Review</li>
-            <li>Incident Response</li>
+          <ul>
+            <li>Contributed to a 48-hour internal hackathon organized for SIH 2025.</li>
+            <li>Coordinated with faculty members and student teams for smooth execution.</li>
+            <li>Created and edited social media reels to increase digital visibility.</li>
           </ul>
-          <div class="service-footer">
-            <span class="service-status active">● ACTIVE</span>
-          </div>
-        </div>
-        <div class="service-card" data-index="04">
-          <div class="service-icon">🐛</div>
-          <h3 class="service-title">Bug Bounty Consulting</h3>
-          <p class="service-desc">Help your team set up and manage bug bounty programs. Also available for responsible disclosure reports.</p>
-          <ul class="service-list">
-            <li>Program Setup</li>
-            <li>Scope Definition</li>
-            <li>Triage & Validation</li>
-            <li>CVE Documentation</li>
-          </ul>
-          <div class="service-footer">
-            <span class="service-status active">● ACTIVE</span>
-          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="section-header">
-        <span class="section-cmd">ls -la ./projects/</span>
-        <span class="section-divider"></span>
-        <h2 class="section-title">Projects</h2>
-      </div>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-type dev">DEV</span>
-            <div class="project-links">
-              <a href="#" class="proj-link" title="GitHub">{ }</a>
-              <a href="#" class="proj-link" title="Live">↗</a>
-            </div>
-          </div>
-          <h3 class="project-title">SecureDash</h3>
-          <p class="project-desc">A real-time cybersecurity dashboard built with React & Node.js. Monitors network events, logs, and threat feeds via WebSockets.</p>
-          <div class="project-tags">
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">WebSocket</span>
-            <span class="tag">MongoDB</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-type sec">SEC</span>
-            <div class="project-links">
-              <a href="#" class="proj-link">{ }</a>
-              <a href="#" class="proj-link">↗</a>
-            </div>
-          </div>
-          <h3 class="project-title">AutoRecon++</h3>
-          <p class="project-desc">Python-based automated recon tool for bug bounty hunters. Chains Nmap, Subfinder, and Nuclei into a single workflow.</p>
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">Nmap</span>
-            <span class="tag">Nuclei</span>
-            <span class="tag">Bash</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-type dev">DEV</span>
-            <div class="project-links">
-              <a href="#" class="proj-link">{ }</a>
-              <a href="#" class="proj-link">↗</a>
-            </div>
-          </div>
-          <h3 class="project-title">PhishGuard</h3>
-          <p class="project-desc">ML-powered phishing URL detector. Trained on 100K+ URLs. Deployed as a Chrome extension and REST API service.</p>
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">ML</span>
-            <span class="tag">Chrome Ext</span>
-            <span class="tag">Flask</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-type sec">SEC</span>
-            <div class="project-links">
-              <a href="#" class="proj-link">{ }</a>
-              <a href="#" class="proj-link">↗</a>
-            </div>
-          </div>
-          <h3 class="project-title">SQLi Hunter</h3>
-          <p class="project-desc">Automated SQL injection scanner with bypass techniques. Detects blind, time-based, and error-based SQLi vulnerabilities.</p>
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">SQLMap</span>
-            <span class="tag">Automation</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-type dev">DEV</span>
-            <div class="project-links">
-              <a href="#" class="proj-link">{ }</a>
-              <a href="#" class="proj-link">↗</a>
-            </div>
-          </div>
-          <h3 class="project-title">HackFolio</h3>
-          <p class="project-desc">Open-source Kali-themed developer portfolio template. 100+ GitHub stars. Fully customizable with zero dependencies.</p>
-          <div class="project-tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JS</span>
-            <span class="tag">Open Source</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-type sec">SEC</span>
-            <div class="project-links">
-              <a href="#" class="proj-link">{ }</a>
-              <a href="#" class="proj-link">↗</a>
-            </div>
-          </div>
-          <h3 class="project-title">WiFi Analyzer CLI</h3>
-          <p class="project-desc">Bash + Python tool for wireless network analysis. Detects rogue APs, deauth attacks, and WPS vulnerabilities.</p>
-          <div class="project-tags">
-            <span class="tag">Bash</span>
-            <span class="tag">Python</span>
-            <span class="tag">Aircrack-ng</span>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- ===== MARQUEE 2 ===== -->
+  <div class="marquee-wrap marquee-wrap--light">
+    <div class="marquee-track marquee-track--reverse">
+      <span>Ahmedabad</span><span class="sep">◆</span>
+      <span>Gujarat</span><span class="sep">◆</span>
+      <span>India</span><span class="sep">◆</span>
+      <span>Open to Remote</span><span class="sep">◆</span>
+      <span>kptmewada@gmail.com</span><span class="sep">◆</span>
+      <span>+91-9712907122</span><span class="sep">◆</span>
+      <span>Available Now</span><span class="sep">◆</span>
+      <span>Ahmedabad</span><span class="sep">◆</span>
+      <span>Gujarat</span><span class="sep">◆</span>
+      <span>India</span><span class="sep">◆</span>
+      <span>Open to Remote</span><span class="sep">◆</span>
+      <span>kptmewada@gmail.com</span><span class="sep">◆</span>
+      <span>+91-9712907122</span><span class="sep">◆</span>
+      <span>Available Now</span><span class="sep">◆</span>
+    </div>
+  </div>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="section-header">
-        <span class="section-cmd">nc -lvp 4444 # contact</span>
-        <span class="section-divider"></span>
-        <h2 class="section-title">Contact</h2>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="contact-terminal">
-            <div class="terminal-titlebar small">
-              <div class="terminal-buttons">
-                <span class="t-btn t-close"></span>
-                <span class="t-btn t-min"></span>
-                <span class="t-btn t-max"></span>
-              </div>
-              <span class="terminal-title">contact.txt</span>
-            </div>
-            <div class="contact-terminal-body">
-              <div class="contact-line">
-                <span class="ct-key">$ email</span>
-                <span class="ct-val">root@yourdomain.com</span>
-              </div>
-              <div class="contact-line">
-                <span class="ct-key">$ github</span>
-                <span class="ct-val">github.com/yourusername</span>
-              </div>
-              <div class="contact-line">
-                <span class="ct-key">$ linkedin</span>
-                <span class="ct-val">linkedin.com/in/yourusername</span>
-              </div>
-              <div class="contact-line">
-                <span class="ct-key">$ discord</span>
-                <span class="ct-val">hacker#0000</span>
-              </div>
-              <div class="contact-line">
-                <span class="ct-key">$ location</span>
-                <span class="ct-val">Remote Worldwide 🌍</span>
-              </div>
-              <div class="contact-line blink-line">
-                <span class="ct-key">$ status</span>
-                <span class="ct-val available">● Available for hire</span>
-              </div>
-            </div>
+  <!-- ===== CONTACT ===== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <p class="section-label">// get in touch</p>
+      <div class="contact__layout">
+        <div class="contact__left">
+          <h2 class="section-title large-cta">Let's Build<br />Something<br />Secure.</h2>
+          <p>Whether you're looking for a cybersecurity professional, a web developer, or someone who bridges both — I'd love to hear from you.</p>
+          <div class="contact__links">
+            <a href="mailto:kptmewada@gmail.com" class="btn btn--primary">✉ Email Me</a>
+            <a href="tel:+919712907122" class="btn btn--ghost">📞 Call Me</a>
+          </div>
+          <div class="social-links">
+            <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://github.com" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://tryhackme.com" target="_blank" rel="noopener">TryHackMe ↗</a>
           </div>
         </div>
-        <div class="contact-form-wrapper">
-          <form class="contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+        <div class="contact__right">
+          <form class="contact__form" id="contactForm" novalidate>
             <div class="form-group">
-              <label for="name">// Your Name</label>
-              <input type="text" id="name" placeholder="Enter your name..." required autocomplete="off"/>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
             </div>
             <div class="form-group">
-              <label for="email">// Email Address</label>
-              <input type="email" id="email" placeholder="Enter your email..." required autocomplete="off"/>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
             </div>
             <div class="form-group">
-              <label for="subject">// Subject</label>
-              <select id="subject">
-                <option value="">Select a service...</option>
-                <option value="web">Web Development</option>
-                <option value="pentest">Penetration Testing</option>
-                <option value="hardening">Security Hardening</option>
-                <option value="bugbounty">Bug Bounty Consulting</option>
-                <option value="other">Other</option>
-              </select>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
             </div>
-            <div class="form-group">
-              <label for="message">// Message</label>
-              <textarea id="message" rows="5" placeholder="Describe your mission..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary full-width">
-              <span class="btn-text">./send_message.sh</span>
-              <span class="btn-loader hidden" id="btn-loader">Sending...</span>
-            </button>
-            <div class="form-success hidden" id="form-success">
-              <span class="success-icon">✓</span> Message transmitted successfully!
-            </div>
+            <button type="submit" class="btn btn--primary btn--full">Send Message →</button>
+            <p class="form-note" id="formNote"></p>
           </form>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <span class="prompt">root@kali</span><span class="colon">:</span><span class="path">~</span><span class="hash">#</span>
-          <span class="footer-copy">  © 2025 All Rights Reserved</span>
-        </div>
-        <div class="footer-links">
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">HackTheBox</a>
-          <a href="#">TryHackMe</a>
-        </div>
-        <div class="footer-cmd">
-          <span class="footer-terminal">System uptime: <span id="footer-uptime">calculating...</span></span>
-        </div>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__logo">KPM<span class="accent">.</span></span>
+        <p>Krunal P. Mewada — Ahmedabad, Gujarat, India</p>
+        <p class="footer__copy">© <span id="year"></span> All rights reserved. Built with 🛡️ & 💻</p>
       </div>
-    </footer>
-
-  </div><!-- /main-site -->
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
